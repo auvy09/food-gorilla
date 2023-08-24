@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
-.deawer-side a.active {
+.drawer-side a.active {
     color: goldenrod
+}
+
+.drawer-side a {
+    background-color: transparent;
 }

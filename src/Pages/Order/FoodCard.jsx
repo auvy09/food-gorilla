@@ -29,7 +29,7 @@ const FoodCard = ({ item }) => {
                             icon: 'success',
                             title: 'Item Added to the cart',
                             showConfirmButton: false,
-                            timer: 1500
+                            timer: 900
                         })
                     }
                 })

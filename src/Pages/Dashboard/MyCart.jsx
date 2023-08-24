@@ -7,7 +7,7 @@ import useCarts from "../../hooks/useCarts";
 
 const MyCart = () => {
     const [cart] = useCarts();
-
+    { console.log(cart); }
     const total = cart.reduce((sum, item) => item.price + sum, 0)
     const handleDelete = item => {
         Swal.fire({
