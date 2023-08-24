@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.deawer-side a.active {
+    color: goldenrod
+}
