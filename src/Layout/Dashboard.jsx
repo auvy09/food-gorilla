@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaCartArrowDown, FaWallet, FaCalendar, FaHome, FaList, FaClipboardList, FaUtensils, FaUserAlt, FaBook } from 'react-icons/fa';
+import { FaCartArrowDown, FaWallet, FaCalendar, FaHome, FaList, FaClipboardList, FaUserAlt } from 'react-icons/fa';
 import useCarts from '../hooks/useCarts';
 
 const Dashboard = () => {
@@ -49,9 +49,10 @@ const Dashboard = () => {
 
                     {isAdmin ?
                         <>
-                            <li><NavLink to='/'><FaHome />Admin Home</NavLink></li>
+                            <li><NavLink to='/'><FaHome />Home</NavLink></li>
 
-                            <li><NavLink to='/dashboard/history'><FaWallet />Manage Items</NavLink></li>
+                            <li><NavLink to='/dashboard/additem'><FaWallet />Add Items</NavLink></li>
+                            <li><NavLink to='/dashboard/manageitem'><FaWallet />Manage Items</NavLink></li>
 
                             <li><NavLink to='/dashboard/allusers'><FaUserAlt />Manage user</NavLink></li>
                             <li><NavLink to='/dashboard/mycart'><FaCartArrowDown />My Cart <span className="badge badge-secondary">+{cart?.length || 0}</span></NavLink></li>

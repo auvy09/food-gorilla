@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
-import { FaTrash, FaUser, FaUserShield } from "react-icons/fa";
+import { FaTrash, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
@@ -11,7 +11,36 @@ const AllUsers = () => {
         const res = await axiosSecure.get('/users')
         return res.data;
     })
-    const handleDelete = user => {
+    const handleUserDelete = user => {
+        console.log(user)
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${user._id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(() => {
+
+
+
+                        window.location.reload();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your user has been deleted.',
+                            'success'
+                        )
+
+                    })
+            }
+        })
 
     }
     const handleMakeAdmin = user => {
@@ -64,7 +93,7 @@ const AllUsers = () => {
                             <td>{
                                 user.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(user)} className="btn hover:bg-yellow-100 btn-ghost btn-xs"><FaUserShield className=" text-yellow-600 text-lg"></FaUserShield></button>
                             }</td>
-                            <td><button onClick={() => handleDelete(user)} className="btn hover:bg-red-200 btn-ghost btn-xs"><FaTrash className=" text-red-500 text-lg" /></button></td>
+                            <td><button onClick={() => handleUserDelete(user)} className="btn hover:bg-red-200 btn-ghost btn-xs"><FaTrash className=" text-red-500 text-lg" /></button></td>
                         </tr>
                         )}
 

@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Menu</Link></li>
         <li><Link to='/order'>Order</Link></li>
-        <li><Link to='/cart'>Cart</Link></li>
+
 
         {
             user ? <>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/dashboard/mycart' ><button className="btn">
+                <Link to='/dashboard/mycart' ><button className="btn btn-neutral btn-md">
                     <PiBowlFoodBold className="text-xl" />
                     <div className="badge badge-secondary">+{cart?.length || 0}</div>
                 </button></Link>

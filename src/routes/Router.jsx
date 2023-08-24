@@ -13,6 +13,8 @@ import PrivetRoute from "./PrivetRoute";
 import Dashboard from "../Layout/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart";
 import AllUsers from "../Pages/Dashboard/AllUsers";
+import ManageItems from "../Pages/Dashboard/ManageItems";
+import AddItem from "../Pages/Dashboard/AddItem";
 
 
 export const router = createBrowserRouter([
@@ -57,6 +59,14 @@ export const router = createBrowserRouter([
             {
                 path: 'allusers',
                 element: <AllUsers />
+            },
+            {
+                path: 'manageitem',
+                element: <ManageItems />
+            },
+            {
+                path: 'additem',
+                element: <AddItem />
             },
         ]
     }
