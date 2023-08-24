@@ -7,7 +7,8 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- The code is written in React.js. In contextProvider, I create authProvider for Authentication. After giving the information on the login or sign-up page, AuthProvider creates a user or authenticates the user by using Firebase. 
+-
+ The code is written in React.js. In contextProvider, I create authProvider for Authentication. After giving the information on the login or sign-up page, AuthProvider creates a user or authenticates the user by using Firebase. 
 I config Firebase in firebase.config.js.
 In hooks, I make useAdmin, useAuth, useCarts, and useMenu to find the information from different pages when needed.
 I create a Dashboard and main file in the layout folder to make an Admin or user dashboard and main home page. 
